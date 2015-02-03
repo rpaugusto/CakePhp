@@ -1,12 +1,14 @@
+<?php $id = $this->request->param; ?>
+
 <div class="itensPedidos form">
 <?php echo $this->Form->create('ItensPedido'); ?>
 	<fieldset>
 		<legend><?php echo __('Add Itens Pedido'); ?></legend>
 	<?php
 		echo $this->Form->input('produto_id');
-		echo $this->Form->input('valor');
+		echo $this->Form->input('valor', array('value'=> $this->request->data['produtos']['preco']));
 		echo $this->Form->input('qtd');
-		echo $this->Form->input('pedido_id');
+		echo $this->Form->input('pedido_id', array('type' => 'hidden','value' => $id));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

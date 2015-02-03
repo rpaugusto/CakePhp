@@ -7,7 +7,7 @@
 		echo $this->Form->input('total');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Novo Pedido')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

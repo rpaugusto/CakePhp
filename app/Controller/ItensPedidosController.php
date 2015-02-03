@@ -45,14 +45,14 @@ class ItensPedidosController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($pedido_id = NULL) {
 		if ($this->request->is('post')) {
 			$this->ItensPedido->create();
 			if ($this->ItensPedido->save($this->request->data)) {
-				$this->Session->setFlash(__('The itens pedido has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('Item adicionado ao pedido'));
+				return $this->redirect(array('controller' => 'pedidos','action' => 'view', $pedido_id));
 			} else {
-				$this->Session->setFlash(__('The itens pedido could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('item não pode ser adicionado ao pedido.'));
 			}
 		}
 		$produtos = $this->ItensPedido->Produto->find('list');
