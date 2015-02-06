@@ -19,7 +19,7 @@ class ItensPedido extends AppModel {
  * Validation rules
  *
  * @var array
- */
+ *
 	public $validate = array(
 		'produto_id' => array(
 			'notEmpty' => array(

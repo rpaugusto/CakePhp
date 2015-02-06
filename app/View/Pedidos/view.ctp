@@ -18,11 +18,14 @@
             <?php echo 'R$ ' . h($pedido['Pedido']['total']); ?>
         </dd>
     </dl>
+    <hr />
+        <?php echo $this->Html->link(__('Adicionar Produtos'), array('controller' => 'itensPedidos', 'action' => 'add', '?' => array('id' => $pedido['Pedido']['id']))); ?>
 </div>
 <div class="actions">
     <h3><?php echo __('Actions'); ?></h3>
     <ul>
         <li><?php echo $this->Html->link(__('Novo Pedido'), array('action' => 'add')); ?> </li>
         <li><?php echo $this->Html->link(__('Listar Pedidos'), array('action' => 'index')); ?> </li>
+        <li></li>
     </ul>
 </div>

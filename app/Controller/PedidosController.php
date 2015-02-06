@@ -56,7 +56,7 @@ class PedidosController extends AppController {
         $this->Pedido->create();
         $this->request->data['cliente_id'] = $id;
         if ($this->Pedido->save($this->request->data)) {
-            return $this->redirect(array('controller' => 'itensPedidos', 'action' => 'add', $this->Pedido->getLastInsertID()));
+            return $this->redirect(array('controller' => 'itensPedidos', 'action' => 'add', 'id' => array('id' => $this->Pedido->getLastInsertID()) ));
         } else {
             $this->Session->setFlash(__('The pedido could not be saved. Please, try again.'));
         }
